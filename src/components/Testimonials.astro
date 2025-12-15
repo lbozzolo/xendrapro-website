@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+
+const testimonials = [
+  {
+    quote: "Integrar su agente conversacional a nuestra plataforma tomó semanas, no meses. Hoy gestionamos miles de consultas sin intervención humana y nuestros clientes valoran la velocidad y precisión de las respuestas.",
+    author: "Carla Gómez",
+    role: "CTO en Flow Systems",
+    avatar: "/testimonial-avatar-1.jpg"
+  },
+  {
+    quote: "El equipo nos acompañó en cada etapa, desde el diseño del flujo conversacional hasta la integración con nuestro CRM. La calidad del soporte y la claridad técnica marcaron la diferencia desde el primer día.",
+    author: "Martín Rivas",
+    role: "Head of Product en ConnectHub",
+    avatar: "/testimonial-avatar-2.jpg"
+  },
+  {
+    quote: "Poder ofrecer atención automatizada 24/7 fue un cambio total para nuestra retención. El agente entiende el contexto, resuelve problemas reales y la infraestructura es tan sólida que parece construido dentro de nuestra propia plataforma.",
+    author: "Paula Méndez",
+    role: "CEO en TeamBridge",
+    avatar: "/testimonial-avatar-3.jpg"
+  }
+];
+---
+
+<section class="py-20 bg-white relative overflow-hidden">
+  <!-- Subtle background pattern with parallax effect -->
+  <div class="absolute inset-0 opacity-5 parallax" data-speed="0.15">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
+  </div>
+  
+  <div class="container-custom relative">
+    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        Confiado por empresas que lideran con IA
+      </h2>
+      <p class="mt-4 text-xl text-gray-600">
+        Mirá lo que nuestros clientes dicen sobre trabajar con nuestros agentes conversacionales.
+      </p>
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class="testimonial-card animate-on-scroll group" 
+          style={`animation-delay: ${index * 0.15}s`}
+        >
+          <div class="flex items-center mb-6">
+            <div class="relative mr-4 overflow-hidden rounded-full transition-all duration-300 group-hover:shadow-md">
+              <img 
+                src={testimonial.avatar} 
+                alt={testimonial.author} 
+                class="w-12 h-12 rounded-full transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+            <div>
+              <h4 class="font-semibold transition-colors duration-300 group-hover:text-payflo-purple">{testimonial.author}</h4>
+              <p class="text-sm text-gray-600">{testimonial.role}</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic relative">
+            <span class="absolute -top-2 -left-1 text-4xl text-payflo-purple opacity-20 transition-all duration-300 group-hover:opacity-40 group-hover:scale-110">"</span>
+            {testimonial.quote}
+            <span class="absolute -bottom-2 -right-1 text-4xl text-payflo-purple opacity-20 transition-all duration-300 group-hover:opacity-40 group-hover:scale-110">"</span>
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

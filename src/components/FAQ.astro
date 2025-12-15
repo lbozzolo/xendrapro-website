@@ -1,0 +1,81 @@
+---
+const faqs = [
+  {
+    question: "¿Cuánto tiempo lleva implementar un agente conversacional?",
+    answer: "Generalmente entre 1 y 3 semanas, dependiendo del nivel de integración, los flujos conversacionales y la documentación que quieras cargar. En muchos casos, podemos lanzar un MVP en pocos días."
+  },
+  {
+    question: "¿Los agentes pueden integrarse con mis sistemas actuales?",
+    answer: "Sí. Podemos conectarnos por API, webhooks o integraciones prearmadas con CRM, WhatsApp, Moodle, WooCommerce, telefonía VoIP y más. Adaptamos el agente a tu infraestructura existente."
+  },
+  {
+    question: "¿Cómo manejan la seguridad de los datos?",
+    answer: "Usamos encriptación, protocolos seguros, manejo aislado de datos sensibles y cumplimiento con las normas de privacidad aplicables. Además, implementamos controles de acceso y monitoreo continuo."
+  },
+  {
+    question: "¿Puedo personalizar el comportamiento y la “personalidad” del agente?",
+    answer: "Totalmente. Podés definir tono, estilo de respuestas, flujos, reglas, conocimiento base, restricciones y capacidades específicas según tu negocio."
+  },
+  {
+    question: "¿Qué tipo de soporte ofrecen?",
+    answer: "Acompañamiento en todo el proceso: diseño del agente, implementación, pruebas, optimización continua y soporte técnico por canales prioritarios según el plan."
+  },
+  {
+    question: "¿Cómo funciona el modelo de precios?",
+    answer: "Trabajamos con planes escalables según el volumen de interacciones, cantidad de agentes, canales (web, WhatsApp, voz) e integraciones requeridas. Podés comenzar con un plan básico y escalar a medida que crece tu uso."
+  }
+];
+---
+
+<section class="py-20 bg-payflo-gray relative overflow-hidden">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
+  </div>
+  
+  <div class="container-custom relative">
+    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        Preguntas frecuentes
+      </h2>
+      <p class="mt-4 text-xl text-gray-600">
+        Todo lo que necesitás saber sobre nuestros agentes conversacionales IA.
+      </p>
+    </div>
+    
+    <div class="mt-12 max-w-3xl mx-auto">
+      {faqs.map((faq, index) => (
+        <div 
+          class="mb-6 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden animate-on-scroll faq-item hover:shadow-md transition-all duration-300"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer p-6 transition-all duration-300 hover:bg-gray-50">
+              <h3 class="text-lg font-medium transition-colors duration-300 group-hover:text-payflo-purple">{faq.question}</h3>
+              <div class="flex-shrink-0 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 faq-content">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center animate-on-scroll">
+      <p class="text-gray-600">
+        ¿Tenés más preguntas? Estamos para ayudarte.
+      </p>
+      <a href="/contact" class="mt-4 inline-flex items-center text-payflo-purple font-medium hover:underline group">
+        Contáctanos 
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

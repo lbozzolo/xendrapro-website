@@ -18,8 +18,8 @@ import { Image } from 'astro:assets';
           Escala tu operación telefónica sin contratar más personal. Agentes de voz capaces de gestionar miles de llamadas simultáneas para ventas, cobranzas y soporte, conectados directamente a tu CRM.
         </p>
         <div class="animate-on-scroll delay-2 mt-8 flex flex-col sm:flex-row gap-4">
-          <a href="/book-demo" class="btn btn-primary">Book a Demo</a>
-          <a href="/documentation" class="btn btn-secondary">Read Documentation</a>
+          <a href="/agendar-demo" class="btn bg-payflo-dark text-white hover:bg-opacity-90">Agendar Demo</a>
+          <a href="/documentation" class="btn btn-secondary">Leer Documentación</a>
         </div>
         <div class="animate-on-scroll delay-3 mt-8 flex items-center space-x-4">
           <div class="flex -space-x-2" role="img" aria-label="Customer testimonial avatars">
@@ -45,18 +45,15 @@ import { Image } from 'astro:assets';
         </div>
       </div>
       
-      <div class="animate-on-scroll delay-4">
-        <div class="relative hover-zoom">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-payflo-purple to-payflo-blue rounded-xl blur opacity-30 transition-opacity duration-300 hover:opacity-50"></div>
-          <div class="relative bg-white rounded-xl shadow-xl overflow-hidden">
-            <Image 
-              src="/dashboard.webp" 
-              alt="Payflo Dashboard" 
-              class="w-full h-auto transition-all duration-500"
-              width={700}
-              height={500}
-            />
-          </div>
+      <div class="animate-on-scroll delay-4 flex justify-center">
+        <div class="relative max-w-md group">
+          <Image 
+            src="/hero-image.webp" 
+            alt="Xendra Pro Interface" 
+            class="w-full h-auto transition-all duration-700 group-hover:scale-105 group-hover:rotate-2"
+            width={500}
+            height={350}
+          />
         </div>
       </div>
     </div>

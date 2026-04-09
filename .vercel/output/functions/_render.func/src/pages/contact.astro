@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+const contactMethods = [
+  {
+    title: "Sales",
+    description: "Talk to our sales team about implementing Payflo for your platform.",
+    icon: "ph:currency-dollar-duotone",
+    email: "sales@payflo.dev"
+  },
+  {
+    title: "Support",
+    description: "Get help with technical questions or implementation issues.",
+    icon: "ph:lifebuoy-duotone",
+    email: "support@payflo.dev"
+  },
+  {
+    title: "Partnerships",
+    description: "Explore partnership opportunities with our team.",
+    icon: "ph:handshake-duotone",
+    email: "partners@payflo.dev"
+  }
+];
+---
+
+<Layout 
+  title="Contacto - Xendra Pro | Agentes de IA conversacional" 
+  description="Contáctanos para descubrir cómo los agentes conversacionales de Xendra Pro pueden automatizar tu atención al cliente. Respondemos a la brevedad."
+>
+  <section class="pt-20 pb-16 md:pt-28 md:pb-24">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Envianos <span class="gradient-text">un mensaje</span>
+        </h1>
+        <p class="mt-6 text-xl text-gray-600">
+          Completá el formulario a continuación o contactanos por correo electrónico para descubrir cómo los agentes conversacionales de Xendra Pro pueden transformar tu atención al cliente.
+        </p>
+      </div>
+      
+      <!-- <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {contactMethods.map((method, index) => (
+          <div 
+            class="bg-white rounded-xl p-8 shadow-lg border border-gray-100 text-center animate-on-scroll" 
+            style={`animation-delay: ${index * 0.15}s`}
+          >
+            <div class="mx-auto flex items-center justify-center w-16 h-16 rounded-full bg-payflo-purple/10 text-payflo-purple mb-6">
+              <Icon name={method.icon} class="h-8 w-8" />
+            </div>
+            <h3 class="text-xl font-semibold">{method.title}</h3>
+            <p class="mt-3 text-gray-600">{method.description}</p>
+            <a href={`mailto:${method.email}`} class="mt-4 block text-payflo-purple font-medium hover:underline">
+              {method.email}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div> -->
+  </section>
+  
+  <section class="py-20 bg-payflo-gray">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="p-8 md:p-12">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6">Envianos un mensaje</h2>
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-payflo-purple focus:border-payflo-purple"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-payflo-purple focus:border-payflo-purple"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label for="company" class="block text-gray-700 font-medium mb-2">Empresa</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-payflo-purple focus:border-payflo-purple"
+              />
+            </div>
+            <div>
+              <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-payflo-purple focus:border-payflo-purple"
+                required
+              ></textarea>
+            </div>
+            <div id="form-status" class="hidden rounded-lg p-4 text-sm"></div>
+            <div>
+              <button
+                type="submit"
+                id="submit-btn"
+                class="btn btn-primary w-full md:w-auto"
+              >
+                Enviar mensaje
+              </button>
+            </div>
+          </form>
+
+          <script>
+            const form = document.getElementById('contact-form') as HTMLFormElement;
+            const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+            const formStatus = document.getElementById('form-status') as HTMLDivElement;
+
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault();
+
+              const originalText = submitBtn.innerText;
+              submitBtn.innerText = 'Enviando...';
+              submitBtn.disabled = true;
+              formStatus.classList.add('hidden');
+
+              const formData = new FormData(form);
+              const data = Object.fromEntries(formData.entries());
+
+              try {
+                const response = await fetch('/api/contact', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                  formStatus.textContent = '¡Mensaje enviado correctamente! Te responderemos a la brevedad.';
+                  formStatus.className = 'rounded-lg p-4 text-sm bg-green-50 text-green-700 border border-green-200';
+                  form.reset();
+                } else {
+                  const result = await response.json();
+                  formStatus.textContent = result.details || 'Ocurrió un error al enviar el mensaje. Intentá nuevamente.';
+                  formStatus.className = 'rounded-lg p-4 text-sm bg-red-50 text-red-700 border border-red-200';
+                }
+              } catch {
+                formStatus.textContent = 'Error de conexión. Verificá tu conexión a internet e intentá nuevamente.';
+                formStatus.className = 'rounded-lg p-4 text-sm bg-red-50 text-red-700 border border-red-200';
+              } finally {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+              }
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- <section class="py-20 bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-bold">Visítanos</h2>
+        <p class="mt-4 text-xl text-gray-600">
+          Nuestra sede se encuentra en San Francisco, California.
+        </p>
+        <address class="mt-6 not-italic text-gray-600">
+          123 Tech Avenue, Suite 400<br>
+          San Francisco, CA 94107<br>
+          Estados Unidos
+        </address>
+      </div>
+      
+      <div class="mt-12 h-96 rounded-xl overflow-hidden animate-on-scroll">
+        <div class="w-full h-full bg-payflo-gray flex items-center justify-center">
+          <p class="text-gray-500">Marcador de mapa interactivo</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+</Layout>

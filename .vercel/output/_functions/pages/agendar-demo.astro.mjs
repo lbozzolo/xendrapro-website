@@ -1,0 +1,53 @@
+/* empty css                                    */
+import { c as createComponent, a as renderComponent, d as renderScript, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_8Kcn4KFe.mjs';
+import 'kleur/colors';
+import { $ as $$Layout } from '../chunks/Layout_QGSZAP_0.mjs';
+import { $ as $$Icon } from '../chunks/Icon_BKns9wQs.mjs';
+/* empty css                                        */
+export { renderers } from '../renderers.mjs';
+
+const $$AgendarDemo = createComponent(async ($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Agendar Demo - Xendra Pro", "description": "Agenda una demostraci\xF3n personalizada y descubre c\xF3mo los agentes de voz de Xendra Pro pueden transformar tu atenci\xF3n al cliente.", "data-astro-cid-wrvjj77f": true }, { "default": async ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="min-h-screen bg-gradient-to-b from-payflo-gray/50 to-white py-16 px-4 sm:px-6 lg:px-8" data-astro-cid-wrvjj77f> <div class="max-w-3xl mx-auto" data-astro-cid-wrvjj77f> <!-- Header --> <div class="text-center mb-12" data-astro-cid-wrvjj77f> <h1 class="text-4xl font-bold mb-4" data-astro-cid-wrvjj77f>Agendar una Demo</h1> <p class="text-xl text-gray-600" data-astro-cid-wrvjj77f>
+Descubrí cómo nuestros agentes de voz pueden transformar tu atención al cliente
+</p> </div> <!-- Multi-step Form --> <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden" data-astro-cid-wrvjj77f> <!-- Success Message --> <div id="success-message" class="hidden p-12 text-center" data-astro-cid-wrvjj77f> <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4" data-astro-cid-wrvjj77f> <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-wrvjj77f> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-wrvjj77f></path> </svg> </div> <h3 class="text-2xl font-bold text-gray-900 mb-2" data-astro-cid-wrvjj77f>¡Solicitud Enviada!</h3> <p class="text-gray-600 mb-8" data-astro-cid-wrvjj77f>Gracias por tu interés. Nos pondremos en contacto pronto para coordinar la demo.</p> <a href="/" class="inline-block px-6 py-3 bg-payflo-purple text-white rounded-lg hover:bg-payflo-purple/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-payflo-purple/20" data-astro-cid-wrvjj77f>
+Volver al inicio
+</a> </div> <!-- Error Message Container --> <div id="form-error-message" class="hidden mx-8 mt-8 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3" data-astro-cid-wrvjj77f> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-wrvjj77f> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" data-astro-cid-wrvjj77f></path> </svg> <div data-astro-cid-wrvjj77f> <h4 class="text-sm font-medium text-red-800" data-astro-cid-wrvjj77f>Error al enviar</h4> <p id="error-text" class="text-sm text-red-600 mt-1" data-astro-cid-wrvjj77f></p> </div> </div> <!-- Progress Steps --> <div class="flex border-b border-gray-100" id="progress-steps" data-astro-cid-wrvjj77f> <div class="flex-1 p-4 text-center bg-payflo-purple/5 border-r border-gray-100 current-step" data-step="1" data-astro-cid-wrvjj77f> <div class="flex items-center justify-center mb-2" data-astro-cid-wrvjj77f> <div class="w-8 h-8 rounded-full bg-payflo-purple text-white flex items-center justify-center" data-astro-cid-wrvjj77f> <span data-astro-cid-wrvjj77f>1</span> </div> </div> <span class="text-sm font-medium" data-astro-cid-wrvjj77f>Contacto</span> </div> <div class="flex-1 p-4 text-center" data-step="2" data-astro-cid-wrvjj77f> <div class="flex items-center justify-center mb-2" data-astro-cid-wrvjj77f> <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center" data-astro-cid-wrvjj77f> <span data-astro-cid-wrvjj77f>2</span> </div> </div> <span class="text-sm font-medium" data-astro-cid-wrvjj77f>Agendar</span> </div> </div> <!-- Form Steps --> <form id="demo-form" class="p-8" data-astro-cid-wrvjj77f> <!-- Step 1: Contact Details --> <div class="step-content" id="step-1" data-astro-cid-wrvjj77f> <div class="space-y-6" data-astro-cid-wrvjj77f> <div class="grid grid-cols-2 gap-6" data-astro-cid-wrvjj77f> <div data-astro-cid-wrvjj77f> <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1" data-astro-cid-wrvjj77f>
+Nombre
+</label> <input type="text" id="first-name" name="first-name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-payflo-purple/20 focus:border-payflo-purple" data-astro-cid-wrvjj77f> <p class="text-red-500 text-xs mt-1 hidden error-message" id="error-first-name" data-astro-cid-wrvjj77f>Por favor ingresa tu nombre</p> </div> <div data-astro-cid-wrvjj77f> <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1" data-astro-cid-wrvjj77f>
+Apellido
+</label> <input type="text" id="last-name" name="last-name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-payflo-purple/20 focus:border-payflo-purple" data-astro-cid-wrvjj77f> <p class="text-red-500 text-xs mt-1 hidden error-message" id="error-last-name" data-astro-cid-wrvjj77f>Por favor ingresa tu apellido</p> </div> </div> <div data-astro-cid-wrvjj77f> <label for="work-email" class="block text-sm font-medium text-gray-700 mb-1" data-astro-cid-wrvjj77f>
+Email Corporativo
+</label> <input type="email" id="work-email" name="work-email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-payflo-purple/20 focus:border-payflo-purple" placeholder="tu@empresa.com" data-astro-cid-wrvjj77f> <p class="text-red-500 text-xs mt-1 hidden error-message" id="error-work-email" data-astro-cid-wrvjj77f>Por favor ingresa un email válido</p> </div> <div data-astro-cid-wrvjj77f> <label for="job-title" class="block text-sm font-medium text-gray-700 mb-1" data-astro-cid-wrvjj77f>
+Cargo
+</label> <input type="text" id="job-title" name="job-title" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-payflo-purple/20 focus:border-payflo-purple" data-astro-cid-wrvjj77f> </div> <div data-astro-cid-wrvjj77f> <label for="phone" class="block text-sm font-medium text-gray-700 mb-1" data-astro-cid-wrvjj77f>
+Teléfono
+</label> <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-payflo-purple/20 focus:border-payflo-purple" data-astro-cid-wrvjj77f> </div> </div> </div> <!-- Step 2: Schedule Demo --> <div class="step-content hidden" id="step-2" data-astro-cid-wrvjj77f> <div class="space-y-6" data-astro-cid-wrvjj77f> <div data-astro-cid-wrvjj77f> <label class="block text-sm font-medium text-gray-700 mb-1" data-astro-cid-wrvjj77f>
+Rango preferido
+</label> <div class="grid grid-cols-2 gap-4" data-astro-cid-wrvjj77f> <button type="button" class="px-4 py-3 rounded-lg border border-gray-200 hover:border-payflo-purple hover:bg-payflo-purple/5 focus:outline-none focus:ring-2 focus:ring-payflo-purple/20" data-date="morning" data-astro-cid-wrvjj77f>
+Por la mañana
+</button> <button type="button" class="px-4 py-3 rounded-lg border border-gray-200 hover:border-payflo-purple hover:bg-payflo-purple/5 focus:outline-none focus:ring-2 focus:ring-payflo-purple/20" data-date="afternoon" data-astro-cid-wrvjj77f>
+Por la tarde
+</button> </div> <p class="text-red-500 text-xs mt-1 hidden error-message" id="error-date" data-astro-cid-wrvjj77f>Por favor selecciona un rango</p> </div> <div data-astro-cid-wrvjj77f> <label for="message" class="block text-sm font-medium text-gray-700 mb-1" data-astro-cid-wrvjj77f>
+Información Adicional
+</label> <textarea id="message" name="message" rows="9" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-payflo-purple/20 focus:border-payflo-purple" placeholder="Cuéntanos sobre tus necesidades específicas o preguntas..." data-astro-cid-wrvjj77f></textarea> </div> </div> </div> <!-- Form Navigation --> <div class="mt-8 flex justify-between" data-astro-cid-wrvjj77f> <button type="button" id="prev-step" class="hidden px-6 py-3 border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-payflo-purple/20" data-astro-cid-wrvjj77f>
+Anterior
+</button> <button type="button" id="next-step" class="ml-auto px-6 py-3 bg-payflo-purple text-white rounded-lg hover:bg-payflo-purple/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-payflo-purple/20" data-astro-cid-wrvjj77f>
+Siguiente
+</button> <button type="submit" id="submit-form" class="hidden ml-auto px-6 py-3 bg-payflo-purple text-white rounded-lg hover:bg-payflo-purple/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-payflo-purple/20" data-astro-cid-wrvjj77f>
+Agendar Demo
+</button> </div> </form> </div> <!-- Trust Badges --> <div class="mt-12 text-center" data-astro-cid-wrvjj77f> <p class="text-sm text-gray-600 mb-4" data-astro-cid-wrvjj77f>Confiado por empresas líderes de software</p> <div class="flex justify-center space-x-8" data-astro-cid-wrvjj77f> ${renderComponent($$result2, "Icon", $$Icon, { "name": "ph:shield-check-duotone", "class": "h-6 w-6 text-gray-400", "data-astro-cid-wrvjj77f": true })} ${renderComponent($$result2, "Icon", $$Icon, { "name": "ph:lock-key-duotone", "class": "h-6 w-6 text-gray-400", "data-astro-cid-wrvjj77f": true })} ${renderComponent($$result2, "Icon", $$Icon, { "name": "ph:certificate-duotone", "class": "h-6 w-6 text-gray-400", "data-astro-cid-wrvjj77f": true })} </div> </div> </div> </div> ` })} ${renderScript($$result, "/Users/lucas/Developer/Next/xendrapro-website/src/pages/agendar-demo.astro?astro&type=script&index=0&lang.ts")} `;
+}, "/Users/lucas/Developer/Next/xendrapro-website/src/pages/agendar-demo.astro", void 0);
+
+const $$file = "/Users/lucas/Developer/Next/xendrapro-website/src/pages/agendar-demo.astro";
+const $$url = "/agendar-demo";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$AgendarDemo,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

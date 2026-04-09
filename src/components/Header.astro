@@ -1,69 +1,94 @@
 ---
-import { Image } from 'astro:assets';
-// import logoSrc from '../assets/logo.svg';
-
 const navItems = [
-  // { name: 'Product', href: '/product' },
-  // { name: 'Solutions', href: '/solutions' },
-  // { name: 'Precios', href: '/precios' },
-  // { name: 'About Us', href: '/about-us' },
-  // { name: 'Blog', href: '/blog' },
+  { name: 'Funcionalidades', href: '/#features' },
+  { name: 'Cómo funciona', href: '/#how-it-works' },
+  { name: 'Comparativa', href: '/#comparison' },
+  { name: 'Testimonios', href: '/#testimonios' },
+  { name: 'FAQ', href: '/#faq' },
+  { name: 'Contacto', href: '/contact' },
 ];
 ---
 
 <header class="sticky top-0 z-50 w-full bg-black/90 backdrop-blur-md border-b border-gray-800" role="banner">
-  <div class="container-custom flex items-center h-20">
-    <a href="/" class="mr-auto flex items-center transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded" aria-label="Payflo home">
-      <img src="/logo.png" alt="Xendra Pro" class="h-12 w-auto transition-all duration-300 hover:brightness-110" />
+  <div class="container-custom flex items-center h-16 md:h-20">
+    <a href="/" class="mr-auto flex items-center" aria-label="Xendra Pro home">
+      <img src="/logo.png" alt="Xendra Pro" class="h-8 md:h-12 w-auto" />
     </a>
-    
+
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-8 mr-8" role="navigation" aria-label="Main navigation">
+    <nav class="hidden md:flex items-center space-x-6 mr-6" role="navigation" aria-label="Main navigation">
       {navItems.map(item => (
-        <a 
-          href={item.href} 
-          class="text-white hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded px-2 py-1"
+        <a
+          href={item.href}
+          class="text-sm text-gray-300 hover:text-white transition-colors duration-200"
         >
           {item.name}
         </a>
       ))}
     </nav>
-    
-    <div class="flex items-center space-x-4">
-      <!-- <a href="/login" class="hidden md:inline-block text-payflo-dark hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 relative focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded px-2 py-1">
-        Log In
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-payflo-purple transition-all duration-300 group-hover:w-full"></span>
-      </a> -->
-      <a href="/agendar-demo" class="btn bg-white text-black hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">Agendar Demo</a>
-      
-      <!-- Mobile Menu Button -->
-      <button 
-        id="menu-toggle" 
-        class="md:hidden flex items-center text-white transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded p-1" 
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
+
+    <a href="/agendar-demo" class="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-white text-black hover:bg-gray-200 transition-colors duration-200">
+      Agendar Demo
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="menu-toggle"
+      class="md:hidden flex items-center text-white p-2"
+      aria-label="Abrir menú de navegación"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg id="icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
   </div>
-  
+
   <!-- Mobile Menu -->
-  <nav id="mobile-menu" class="hidden md:hidden bg-black w-full border-t border-gray-800" role="navigation" aria-label="Mobile navigation">
-    <div class="container-custom py-4 space-y-4">
-      {navItems.map((item, index) => (
-        <a 
-          href={item.href} 
-          class="block py-2 px-2 text-white hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded"
-          style={`transition-delay: ${index * 50}ms;`}
+  <nav id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800" role="navigation" aria-label="Mobile navigation">
+    <div class="container-custom py-4 space-y-1">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class="block py-3 px-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors duration-200"
         >
           {item.name}
         </a>
       ))}
-      <a href="/login" class="block py-2 px-2 text-white hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded">Log In</a>
+      <div class="pt-3 border-t border-gray-800">
+        <a href="/agendar-demo" class="block text-center py-3 px-3 text-sm font-medium rounded-lg bg-white text-black hover:bg-gray-200 transition-colors duration-200">
+          Agendar Demo
+        </a>
+      </div>
     </div>
   </nav>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close menu when clicking a link
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

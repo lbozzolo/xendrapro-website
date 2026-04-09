@@ -17,7 +17,7 @@ const {
 } = Astro.props;
 
 // Preload critical assets
-const faviconImg = await getImage({src: '/favicon.png', width: 32, height: 32});
+const faviconImg = await getImage({src: '/android-chrome-192x192.png', width: 192, height: 192});
 ---
 
 <!doctype html>
@@ -27,6 +27,7 @@ const faviconImg = await getImage({src: '/favicon.png', width: 32, height: 32});
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href={faviconImg.src} />
+    <link rel="apple-touch-icon" sizes="192x192" href="/android-chrome-192x192.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />

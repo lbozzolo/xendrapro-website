@@ -3,7 +3,9 @@ import { ViewTransitions } from 'astro:transitions';
 import { getImage } from 'astro:assets';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Analytics from '@vercel/analytics/astro';
 import '../styles/global.css';
 
 interface Props {
@@ -74,6 +76,7 @@ const faviconImg = await getImage({src: '/android-chrome-192x192.png', width: 19
     </main>
     <Footer />
     <WhatsAppWidget />
+    <Analytics />
     
     <!-- Intersection Observer for animations on scroll -->
     <script>

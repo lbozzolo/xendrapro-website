@@ -34,17 +34,20 @@ export const POST: APIRoute = async ({ request }) => {
     const transporter = nodemailer.createTransport({
       host: import.meta.env.SMTP_HOST,
       port: Number(import.meta.env.SMTP_PORT),
-      secure: Number(import.meta.env.SMTP_PORT) === 465, // true para 465, false para otros
+      secure: Number(import.meta.env.SMTP_PORT) === 465,
       auth: {
         user: import.meta.env.SMTP_USER,
         pass: import.meta.env.SMTP_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false, // necesario en hosting compartido con cert autofirmado
       },
     });
 
     // Envía el correo
     await transporter.sendMail({
       from: `"Xendra Pro" <${import.meta.env.SMTP_USER}>`,
-      to: 'info@verticedigital.com.ar',
+      to: import.meta.env.SMTP_TO || import.meta.env.SMTP_USER,
       replyTo: email,
       subject: `Nueva solicitud de Demo: ${firstName} ${lastName}`,
       html: `

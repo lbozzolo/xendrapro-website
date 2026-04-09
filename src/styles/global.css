@@ -205,7 +205,7 @@ nav a:focus::after {
 
 /* ===== FAQ Accordion Animations ===== */
 .faq-item {
-  overflow: hidden;
+  /* no overflow: hidden aquí para no recortar el contenido expandido */
 }
 
 .faq-item summary {
@@ -220,9 +220,12 @@ nav a:focus::after {
 .faq-content {
   max-height: 0;
   opacity: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
 }
 
+/* Usando el atributo nativo [open] de details — no depende de JS */
+details[open] .faq-content,
 .faq-content.faq-open {
   max-height: 500px;
   opacity: 1;

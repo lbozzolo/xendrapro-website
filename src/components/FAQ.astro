@@ -46,7 +46,7 @@ const faqs = [
     <div class="mt-12 max-w-3xl mx-auto">
       {faqs.map((faq, index) => (
         <div 
-          class="mb-6 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden animate-on-scroll faq-item hover:shadow-md transition-all duration-300"
+          class="mb-6 bg-white rounded-lg shadow-sm border border-gray-100 animate-on-scroll faq-item hover:shadow-md transition-all duration-300"
           style={`animation-delay: ${index * 0.1}s`}
         >
           <details class="group">
@@ -58,7 +58,7 @@ const faqs = [
                 </svg>
               </div>
             </summary>
-            <div class="px-6 pb-6 text-gray-600 faq-content">
+            <div class="px-6 pt-4 pb-6 text-gray-600 faq-content border-t border-gray-100">
               <p>{faq.answer}</p>
             </div>
           </details>

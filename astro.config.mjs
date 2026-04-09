@@ -6,13 +6,20 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://payflo.dev',
+  site: 'https://xendrapro.com',
   output: 'server',
   adapter: vercel(),
   prefetch: true,
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => [
+        'https://xendrapro.com/',
+        'https://xendrapro.com/precios/',
+        'https://xendrapro.com/agendar-demo/',
+        'https://xendrapro.com/contact/',
+      ].includes(page),
+    }),
     icon({
       include: {
         ph: [

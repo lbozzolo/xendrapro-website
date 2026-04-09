@@ -11,11 +11,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const { 
   title, 
-  description = "Xendra Pro: Agentes de Voz con IA para revolucionar tu atención al cliente. Automatiza llamadas, agenda citas y escala tus ventas con inteligencia artificial conversacional."
+  description = "Xendra Pro: Agentes de Voz con IA para revolucionar tu atención al cliente. Automatiza llamadas, agenda citas y escala tus ventas con inteligencia artificial conversacional.",
+  noindex = false
 } = Astro.props;
 
 // Preload critical assets
@@ -31,6 +33,7 @@ const faviconImg = await getImage({src: '/android-chrome-192x192.png', width: 19
     <link rel="icon" type="image/png" href={faviconImg.src} />
     <link rel="apple-touch-icon" sizes="192x192" href="/android-chrome-192x192.png" />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <title>{title}</title>
     <ViewTransitions />
     
@@ -45,8 +48,13 @@ const faviconImg = await getImage({src: '/android-chrome-192x192.png', width: 19
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Xendra Pro",
-        "url": "https://xendra.pro",
-        "logo": "https://xendra.pro/logo.png",
+        "url": "https://xendrapro.com",
+        "logo": "https://xendrapro.com/android-chrome-192x192.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "availableLanguage": "Spanish"
+        },
         "sameAs": [
           "https://twitter.com/xendrapro",
           "https://www.linkedin.com/company/xendrapro"
@@ -59,14 +67,19 @@ const faviconImg = await getImage({src: '/android-chrome-192x192.png', width: 19
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:image" content="https://payflo.dev/og-image.jpg" />
+    <meta property="og:image" content="https://xendrapro.com/android-chrome-192x192.png" />
+    <meta property="og:site_name" content="Xendra Pro" />
+    <meta property="og:locale" content="es_AR" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@payflo_dev" />
+    <meta name="twitter:site" content="@xendrapro" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://payflo.dev/twitter-image.jpg" />
+    <meta name="twitter:image" content="https://xendrapro.com/android-chrome-192x192.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={Astro.url} />
   </head>
   <body class="min-h-screen flex flex-col">
     <a href="#main-content" class="skip-link">Skip to main content</a>

@@ -61,7 +61,7 @@ export default defineConfig({
   ],
   image: {
     service: {
-      entrypoint: 'astro/assets/services/sharp'
+      entrypoint: '@astrojs/vercel/build-image-service',
     }
   }
 });

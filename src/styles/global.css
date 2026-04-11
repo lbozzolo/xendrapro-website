@@ -235,33 +235,6 @@ details[open] .faq-content,
   @apply text-payflo-purple;
 }
 
-/* ===== Mobile Menu Animations ===== */
-#mobile-menu {
-  max-height: 0;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-}
-
-#mobile-menu.mobile-menu-open {
-  max-height: 500px;
-  opacity: 1;
-}
-
-#mobile-menu.mobile-menu-closing {
-  max-height: 0;
-  opacity: 0;
-}
-
-/* Hamburger to X animation */
-#menu-toggle svg {
-  transition: transform 0.3s ease;
-}
-
-#menu-toggle.menu-open svg {
-  transform: rotate(90deg);
-}
-
 /* ===== Parallax Effect ===== */
 .parallax {
   will-change: transform;
